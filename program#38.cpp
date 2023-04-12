@@ -4,17 +4,17 @@ class TicTacToe{
     private:
 
         char (*board)[3];
-        
         int row,col;
         char turn = 'X';
 
     public:
 
-        TicTacToe(int row_in, int col_in, char (&board_in)[3][3])
+        TicTacToe(int row_in, int col_in, char (&board_in)[3][3], char turn_in)
                 :
             board(&board_in[0]),
             row(row_in),
-            col(col_in)
+            col(col_in),
+            turn(turn_in)
         {};
         
         
@@ -25,7 +25,7 @@ class TicTacToe{
 };
 
 void TicTacToe::Draw_board(){
-    board[3][3];
+    board;
 
     std::cout<<"PLAYER - 1 [X]t PLAYER - 2 [O]" << std::endl;
     std::cout<<"\t\t     |     |     \n";
@@ -57,8 +57,9 @@ void TicTacToe::player_Turn(){
 };
 
 int main(){
-
-    TicTacToe Tic;
+    
+    char board[3][3] = {{'1','2','3'},{'4','5','6'},{'7','8','9'}};
+    TicTacToe Tic(3,3,board,'X');
     Tic.Draw_board();
 
     return 0;
