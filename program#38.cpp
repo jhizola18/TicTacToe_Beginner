@@ -1,6 +1,7 @@
 #include<iostream>
 
-
+//Transfer to Vs Community
+// and make a TicTacToe header
 class TicTacToe{
     private:
 
@@ -150,6 +151,7 @@ bool TicTacToe::game_State(){
         winner_found = true;
     }
     
+    //Check for draw
     if(!winner_found){
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
@@ -161,6 +163,7 @@ bool TicTacToe::game_State(){
             if(!draw) break;
         }
     }
+    //Print if the checker found the winner
     if(winner_found){
         if(turn == 'O'){
             std::cout << "Player 1 Wins";
@@ -170,8 +173,6 @@ bool TicTacToe::game_State(){
     } else if(draw){
         std::cout << "Draw!!";
     }
-    
-    
     
     return !(winner_found || draw);              
 }
